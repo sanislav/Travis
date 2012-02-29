@@ -1,6 +1,6 @@
 language: php
 php:
-  - 5.4
+  - 5.3
 mysql:
   adapter: mysql2
   database: wp_travis
