@@ -9,7 +9,7 @@ mysql:
 before_script:
   - "mysql -e 'create database wp_travis;'"
   - cd wp-content
-  - "mysql -e 'mysql -u root -h localhost wp_travis < wp_travis.sql'"
+  - mysql -u root -h localhost wp_travis < wp_travis.sql
   - cd ../
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
