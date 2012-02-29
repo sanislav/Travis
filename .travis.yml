@@ -16,4 +16,4 @@ before_script:
   - cd ..
   - rm -rf wordpress/
   - rm -f latest.tar.gz
-  - mv wp-content/travis-config.php wp-config.php
+  - cp wp-content/travis-config.php wp-config.php
