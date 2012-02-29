@@ -1,0 +1,7 @@
+  .content {default tag is div. .class=<div class="class">, #id=<div id="id">}
+    %p {%tag}
+      %img(src="/images/logo.jpg" alt="Logo") {attributes are specified as normal}
+      Haml is based on one primary principle. Markup should be beautiful.
+    %ul.list
+      - for($i=0; $i<3; $i++) {no need for ending semicolons or brackets for PHP code}
+        %li= $i
