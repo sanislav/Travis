@@ -3,3 +3,5 @@
 /*.php
 /*.txt
 /*.html
+/.wp-tests-db-version
+/.htaccess
