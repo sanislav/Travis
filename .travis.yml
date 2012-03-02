@@ -29,4 +29,4 @@ before_script:
   - rm -f latest.tar.gz
   - cp wp-content/travis-config.php wp-config.php
   - cp wp-content/travis-unit-config.php wp-content/plugins/wp-tests/unittests-config.php
-  - php -f db-setup.php
+  - php -f wp-content/db-setup.php

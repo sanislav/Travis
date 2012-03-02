@@ -1,5 +1,5 @@
 <?php 
-
+echo 'a'; die;
 $query = file_get_contents( './wp-content/wp_travis.sql' );
 
 $link = mysql_connect('localhost', 'root', '');
