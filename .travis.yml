@@ -1,17 +1,23 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
+
+# list any PHP version you want to test against
 php:
+  # using major version aliases
   - 5.3
-mysql:
-  adapter: mysql2
-  database: wp_travis
-  username: root
-  encoding: utf8
+
+# optionally specify a list of environments, for example to test different RDBMS
+env:
+  - DB=mysql
+
+# execute any number of scripts before the test run, custom env's are available as variables
+
 before_script:
-  - "mysql -e 'create database wp_travis;'"
+  - sh -c "mysql -e 'create database IF NOT EXISTS wp_travis;' -uroot;"
   - cd wp-content
-  - mysql -u root -h localhost wp_travis < wp_travis.sql
-  - "mysql -e 'USE wp_travis'"
-  - "mysql -e 'DESCRIBE wp_options'"
+  - sh -c "mysql -u root -h localhost wp_travis < wp_travis.sql"
+  - sh -c "mysql -e 'USE wp_travis'"
+  - sh -c "mysql -e 'DESCRIBE wp_options'"
   - cd ../
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
