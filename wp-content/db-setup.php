@@ -10,7 +10,8 @@ if (!$link) {
 
 mysql_select_db("wp_travis", $link);
 
-mysql_query( $query );
+$result = mysql_query( $query );
+var_dump($result); die;
 
 $select_test = mysql_query( "SELECT * FROM `wp_users`" );
 $select_test = mysql_fetch_array( $select_test );
