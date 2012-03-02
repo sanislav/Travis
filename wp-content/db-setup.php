@@ -1,13 +1,13 @@
 <?php 
 
 $query = file_get_contents( './wp-content/wp_travis.sql' );
-print_r( substr($query, 0, 10) ); die;
+
 $link = mysql_connect('localhost', 'root', '');
 
 if (!$link) {
     die('Could not connect: ' . mysql_error());
 }
-
+print_r( $link ); die;
 mysql_select_db("wp_travis", $link);
 
 echo substr($query, 0, 10); die;
