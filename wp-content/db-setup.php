@@ -2,7 +2,7 @@
 
 $query = file_get_contents( 'wp_travis.sql' );
 
-$link = mysql_connect('localhost', 'root', 'anaaremere');
+$link = mysql_connect('localhost', 'root', '');
 
 if (!$link) {
     die('Could not connect: ' . mysql_error());
