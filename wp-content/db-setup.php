@@ -1,7 +1,7 @@
 <?php 
-echo 'a'; die;
-$query = file_get_contents( './wp-content/wp_travis.sql' );
 
+$query = file_get_contents( './wp-content/wp_travis.sql' );
+print_r( substr($query, 0, 10) ); die;
 $link = mysql_connect('localhost', 'root', '');
 
 if (!$link) {
