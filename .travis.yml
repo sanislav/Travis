@@ -10,6 +10,7 @@ before_script:
   - "mysql -e 'create database wp_travis;'"
   - cd wp-content
   - mysql -u root -h localhost wp_travis < wp_travis.sql
+  - "mysql -e 'DESCRIBE wp_options'"
   - cd ../
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
