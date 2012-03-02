@@ -12,9 +12,11 @@ mysql_select_db("wp_travis", $link);
 
 mysql_query( $query );
 
-$select_test = mysql_query( "DESCRIBE `wp_users`" );
+$select_test = mysql_query( "SELECT * FROM `wp_users`" );
 
-var_dump($select_test); die;
+$select_test = mysql_fetch_array( $select_test );
+
+echo $select_test['user_login']; die;
 
 mysql_close($link);
 ?>
