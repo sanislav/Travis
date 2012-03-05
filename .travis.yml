@@ -31,4 +31,4 @@ before_script:
   - cp wp-content/travis-unit-config.php wp-content/plugins/wp-tests/unittests-config.php
   - cd wp-content/plugins/wp-tests/
 
-script: phpunit all
+script: phpunit test_test.php
