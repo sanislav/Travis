@@ -9,14 +9,21 @@ php:
 # optionally specify a list of environments, for example to test different RDBMS
 env:
   - DB=mysql
+  - MYSQL_USER=root
+
+mysql:
+  adapter: mysql2
+  username: root
+  encoding: utf8
+  database: browserid
 
 # execute any number of scripts before the test run, custom env's are available as variables
-
-before_script:
-  - "mysql -e 'create database IF NOT EXISTS wp_travis;' -uroot;"
+before_install:
+  - "mysql -e 'create database wp_travis;'"
   - cd wp-content
-  - psql -f wp_travis.sql
+  - mysql wp_travis -u root < wp_travis.sql
   - cd ../
+before_script:
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
   - cd wordpress
