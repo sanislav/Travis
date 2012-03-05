@@ -15,13 +15,13 @@ mysql:
   adapter: mysql2
   username: root
   encoding: utf8
-  database: browserid
+  database: wp_travis
 
 # execute any number of scripts before the test run, custom env's are available as variables
 before_script:
-  - "mysql -e 'create database wp2_travis;'"
+  - "mysql -e 'create database wp_travis;'"
   - cd wp-content
-  - mysql wp2_travis
+  - mysql wp_travis
   - mysql < wp_travis.sql
   - cd ../
   - wget http://wordpress.org/latest.tar.gz
