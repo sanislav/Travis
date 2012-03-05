@@ -2,7 +2,7 @@
 /* Path to the WordPress codebase you'd like to test. Add a backslash in the end. */
 define( 'ABSPATH', '/home/vagrant/builds/sanislav/Travis/' );
 
-define( 'DB_NAME', 'wp_travis' );
+define( 'DB_NAME', 'wp_travis_test' );
 define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', '' );
 define( 'DB_HOST', 'localhost' );
