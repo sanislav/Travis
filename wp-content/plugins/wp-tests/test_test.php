@@ -15,6 +15,6 @@ class WP_Is_Email_Test extends WP_UnitTestCase {
 	}
 
 	function test_is_email_should_not_allow_blah_domain() {
-		$this->assertFalse( is_email( 'nb@nikolay.blah' ) );
+		$this->assertFalse( is_email( 'nb@nikolay.com' ) );
 	}
 }
