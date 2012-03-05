@@ -20,6 +20,7 @@ mysql:
 before_script:
   - "mysql -e 'create database wp_travis;'"
   - mysql wp_travis < wp-content/wp_travis.sql
+  - "mysql wp_travis -e 'show tables'"
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
   - cd wordpress
