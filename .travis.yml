@@ -28,6 +28,7 @@ before_script:
   - cp -rpf * ../
   - cd ..
   - rm -rf wordpress/
-  - rm -f latest.tar.gz
   - cp wp-content/travis-config.php wp-config.php
   - cp wp-content/travis-unit-config.php wp-content/plugins/wp-tests/unittests-config.php
+
+script: phpunit wp-content/plugins/wp-tests/test_test.php
