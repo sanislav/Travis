@@ -19,6 +19,7 @@ mysql:
 # execute any number of scripts before the test run, custom env's are available as variables
 before_script:
   - "mysql -e 'create database wp_travis;'"
+  - mysql wp_travis < wp-content/wp_travis.sql
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
   - cd wordpress
@@ -29,4 +30,5 @@ before_script:
   - cp wp-content/travis-config.php wp-config.php
   - cp wp-content/travis-unit-config.php wp-content/plugins/wp-tests/unittests-config.php
   - cd wp-content/plugins/wp-tests/
+
 script: phpunit all

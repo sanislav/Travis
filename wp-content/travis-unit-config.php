@@ -1,6 +1,6 @@
 <?php
 /* Path to the WordPress codebase you'd like to test. Add a backslash in the end. */
-define( 'ABSPATH', '/var/www/travis/' );
+define( 'ABSPATH', '/home/vagrant/builds/sanislav/Travis/' );
 
 define( 'DB_NAME', 'wp_travis' );
 define( 'DB_USER', 'root' );
