@@ -9,7 +9,6 @@ php:
 # optionally specify a list of environments, for example to test different RDBMS
 env:
   - DB=mysql
-  - MYSQL_USER=root
 
 mysql:
   adapter: mysql2
