@@ -21,7 +21,9 @@ mysql:
 before_install:
   - "mysql -e 'create database wp_travis;'"
   - cd wp-content
-  - mysql wp_travis -u root < wp_travis.sql
+  - mysql wp_travis
+  - mysql < wp_travis.sql
+  - mysql < show tables;
   - cd ../
 before_script:
   - wget http://wordpress.org/latest.tar.gz
