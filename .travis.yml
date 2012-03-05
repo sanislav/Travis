@@ -20,6 +20,7 @@ mysql:
 before_script:
   - "mysql -e 'create database wp_travis;'"
   - cd wp-content
+  - mysql > USE wp_travis
   - "mysql -e 'source wp_travis.sql'"
   - cd ../
   - wget http://wordpress.org/latest.tar.gz
