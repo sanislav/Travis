@@ -10,15 +10,13 @@ php:
 env:
   - DB=mysql
 
-mysql:
-  adapter: mysql2
-  database: wp_travis
-  username: 
-  encoding: utf8
-
 # execute any number of scripts before the test run, custom env's are available as variables
+
 before_script:
-  - "mysql -e 'create database wp_travis;'"
+  - "mysql -e 'create database IF NOT EXISTS wp_travis;' -uroot;"
+  - cd wp-content
+  - psql -f wp_travis.sql
+  - cd ../
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
   - cd wordpress
@@ -29,4 +27,3 @@ before_script:
   - rm -f latest.tar.gz
   - cp wp-content/travis-config.php wp-config.php
   - cp wp-content/travis-unit-config.php wp-content/plugins/wp-tests/unittests-config.php
-  - php -f wp-content/db-setup.php
