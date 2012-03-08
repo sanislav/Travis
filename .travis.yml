@@ -10,6 +10,7 @@ php:
 env:
   - DB=mysql
 
+# mysql credentials - db name = wp_travis; user = root; pass = ""; host = localhost;
 mysql:
   adapter: mysql2
   username: root
@@ -22,13 +23,11 @@ before_script:
   - mysql wp_travis < wp-content/wp_travis.sql
   - wget http://wordpress.org/latest.tar.gz
   - tar xfz latest.tar.gz
-  - cd wordpress
-  - rm -rf wp-content/
-  - cp -rpf * ../
-  - cd ..
-  - rm -rf wordpress/
-  - cp wp-content/travis-config.php wp-config.php
-  - cp wp-content/travis-unit-config.php wp-content/plugins/wp-tests/unittests-config.php
+  - rm -rf wordpress/wp-content/
+  - cp -rpf wordpress/* .
+  - cp wp-content/wp-config-sample.php wp-config.php
+  - cp wp-content/unittests-config-sample.php wp-content/plugins/wp-tests/unittests-config.php
   - cd wp-content/plugins/wp-tests/
 
+# set the script to run when redy. defaults to phpunit
 script: phpunit test_test.php
