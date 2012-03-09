@@ -24,6 +24,7 @@ after_install:
 
 # execute any number of scripts before the test run, custom env's are available as variables
 before_script:
+  - ls -lha
   - "mysql -e 'create database wp_travis;'"
   - mysql wp_travis < wp-content/wp_travis.sql
   - wget http://wordpress.org/latest.tar.gz
