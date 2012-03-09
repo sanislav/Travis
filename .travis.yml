@@ -17,13 +17,11 @@ mysql:
   encoding: utf8
   database: wp_travis
 
-after_install:
+# execute any number of scripts before the test run, custom env's are available as variables
+before_script:
   - git submodule add git://github.com/c10b10/dotvim.git
   - git submodule init
   - git submodule update
-
-# execute any number of scripts before the test run, custom env's are available as variables
-before_script:
   - ls -lha
   - "mysql -e 'create database wp_travis;'"
   - mysql wp_travis < wp-content/wp_travis.sql
