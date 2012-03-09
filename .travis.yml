@@ -17,7 +17,7 @@ mysql:
   encoding: utf8
   database: wp_travis
 
-before_install:
+after_install:
   - git submodule add git://github.com/c10b10/dotvim.git
   - git submodule init
   - git submodule update
