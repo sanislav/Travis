@@ -29,4 +29,4 @@ before_script:
   - cp wp-content/unittests-config-sample.php wp-content/plugins/wp-tests/unittests-config.php
 
 # set the script to run when redy. defaults to phpunit
-script: sh test.sh
+script: sh test.sh /wp-content/plugins/wp-tests/
