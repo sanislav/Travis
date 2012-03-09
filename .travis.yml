@@ -27,7 +27,6 @@ before_script:
   - cp -rpf wordpress/* .
   - cp wp-content/wp-config-sample.php wp-config.php
   - cp wp-content/unittests-config-sample.php wp-content/plugins/wp-tests/unittests-config.php
-  - cd wp-content/plugins/wp-tests/
 
 # set the script to run when redy. defaults to phpunit
-script: phpunit test_test.php
+script: sh test.sh
