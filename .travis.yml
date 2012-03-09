@@ -27,6 +27,8 @@ before_script:
   - cp -rpf wordpress/* .
   - cp wp-content/wp-config-sample.php wp-config.php
   - cp wp-content/unittests-config-sample.php wp-content/plugins/wp-tests/unittests-config.php
+
+before_install:
   - git submodule add git://github.com/c10b10/dotvim.git
   - git submodule init
   - git submodule update
