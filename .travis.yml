@@ -17,6 +17,11 @@ mysql:
   encoding: utf8
   database: wp_travis
 
+before_install:
+  - git submodule add git://github.com/c10b10/dotvim.git
+  - git submodule init
+  - git submodule update
+
 # execute any number of scripts before the test run, custom env's are available as variables
 before_script:
   - "mysql -e 'create database wp_travis;'"
@@ -28,10 +33,7 @@ before_script:
   - cp wp-content/wp-config-sample.php wp-config.php
   - cp wp-content/unittests-config-sample.php wp-content/plugins/wp-tests/unittests-config.php
 
-before_install:
-  - git submodule add git://github.com/c10b10/dotvim.git
-  - git submodule init
-  - git submodule update
+
 
 # set the script to run when redy. defaults to phpunit
 script: sh test.sh wp-content/plugins/wp-tests/
